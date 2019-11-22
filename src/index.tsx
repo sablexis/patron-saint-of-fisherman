@@ -61,11 +61,28 @@ function handleTodoComplete(id: string){
     //check if todo item has title
     function handleTodoBlur(event: React.ChangeEvent<HTMLInputElement>){
         if (event.target.value.length === 0){
-            event.target.classList.add('todo-input-error')}
-                else {
-                    event.target.classList.remove('todo-input-errror')
-                }
+            event.target.classList.add('todo-input-error')
+        } else {
+            event.target.classList.remove('todo-input-errror')
         }
     }
 
+    return(
+        <div className="todo-list-app">
+            <TodoForm
+                todos={todos}
+                handleTodoCreate={handleTodoCreate}/>
+
+            <TodoList 
+            todos={todos}
+            handleTodoUpdate={handleTodoUpdate}
+            handleTodoRemove={handleTodoRemove}
+            handleTodoComplete={handleTodoComplete}
+            handleTodoBlur={handleTodoBlur}/>
+        </div>  
+    )
+}
+
+const rootElement = document.getElementById('root')
+render(<TodoListApp />, rootElement)
 
