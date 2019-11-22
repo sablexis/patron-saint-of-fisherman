@@ -9,7 +9,7 @@ export interface TodoInterface {
 
 //todo form interface
 export interface TodoFormInterface {
-    todos: TodoInterface;
+    todos: TodoInterface[];
     handleTodoCreate: (todo: TodoInterface) => void;
 }
 
@@ -24,7 +24,7 @@ export interface TodoListInterface {
 }
 
 //todo item interface
-export interface TodoItemsInterface {
+export interface TodoItemInterface {
     handleTodoUpdate: (event: React.ChangeEvent<HTMLInputElement>, id: string) => void;
     handleTodoRemove: (id:string) => void;
     handleTodoComplete: (id:string) => void
